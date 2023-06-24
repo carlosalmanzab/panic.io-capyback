@@ -14,6 +14,7 @@ import javax.persistence.*;
 public class User {
     @Id
     @Column(name = "CPIDUSUARIO")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CP_USUARIO_SEQ")
     private Long id;
     @Column(name = "CPNAME")
     private String name;
@@ -44,9 +45,6 @@ public class User {
 
     @Column(name = "CPCOUNTRY")
     private String country;
-
-    @Column(name = "CPPOSTALCODE")
-    private String postalCode;
 
     @Column(name = "CPDNI")
     private String dni;

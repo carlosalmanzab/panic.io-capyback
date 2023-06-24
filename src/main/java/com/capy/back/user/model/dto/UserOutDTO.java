@@ -11,6 +11,10 @@ import java.util.List;
 @AllArgsConstructor
 public class UserOutDTO extends ResultDTO {
 
-    List<UserDTO> users;
+    private List<UserDTO> users;
+    private UserDTO user;
+    private Long totalUsers;
+    private String mensajeError;
+    private String mensajeOK;
 
 }

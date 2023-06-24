@@ -9,4 +9,7 @@ import javax.inject.Singleton;
 @Repository
 @Singleton
 public interface IUserRepository extends JpaRepository<User, Long> {
+    //do an findy by email
+
+    User findByEmail(String email);
 }
