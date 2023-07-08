@@ -16,8 +16,6 @@ public class UserDTO {
     private String password;
     private String phone;
     private String address;
-    private String city;
-    private String country;
-    private String postalCode;
+    private String department;
     private String dni;
 }

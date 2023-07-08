@@ -22,8 +22,7 @@ public class UserDTO {
     @NotNullM(message = "El telefono no puede ser nulo")
     private String phone;
     private String address;
-    private String city;
-    private String country;
+    private String department;
     @NotNullM(message = "El dni no puede ser nulo")
     private String dni;
 }

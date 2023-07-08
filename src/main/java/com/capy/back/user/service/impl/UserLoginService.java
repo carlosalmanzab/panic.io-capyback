@@ -14,7 +14,7 @@ public class UserLoginService implements IUserLoginService {
     UserManagementService userManagementService;
 
     @Override
-    public UserOutDTO login(String user, String password) {
-        return userManagementService.verifyPassword(user, password);
+    public UserOutDTO login(String email, String password) {
+        return userManagementService.verifyPassword(email, password);
     }
 }
