@@ -16,8 +16,8 @@ public class UserLoginController {
     IUserLoginService userLoginService;
 
     @PostMapping()
-    public UserOutDTO login(@RequestParam(name = "user") String user , @RequestParam(name = "password") String password) {
-        return userLoginService.login(user, password);
+    public UserOutDTO login(@RequestParam(name = "email") String email , @RequestParam(name = "password") String password) {
+        return userLoginService.login(email, password);
 
     }
 }
