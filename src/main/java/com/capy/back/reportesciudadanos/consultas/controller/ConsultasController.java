@@ -46,4 +46,9 @@ public class ConsultasController {
     public ReporteCiudadanoOutDTO obtenerReportesCiudadanosPorFechaCreacion(@RequestParam(name = "fechaInicio") LocalDate fechaInicio, @RequestParam(name = "fechaFin") LocalDate fechaFin) {
         return consultasService.obtenerReportesCiudadanosPorFechaCreacion(fechaInicio, fechaFin);
     }
+
+    @GetMapping(path = "obtenerDetallesReporteCiudadano")
+    public ReporteCiudadanoOutDTO obtenerDetallesReporteCiudadano(@RequestParam(name = "idReporte") Long idReporte) {
+        return consultasService.obtenerDetallesReporteCiudadano(idReporte);
+    }
 }
