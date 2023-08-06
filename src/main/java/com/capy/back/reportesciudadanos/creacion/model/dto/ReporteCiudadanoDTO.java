@@ -3,7 +3,7 @@ package com.capy.back.reportesciudadanos.creacion.model.dto;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Setter
 @Getter
@@ -19,5 +19,10 @@ public class ReporteCiudadanoDTO {
     private String localidad;
     private Long latitud;
     private Long longitud;
+    private ImagenesDTO imagenDTO;
+    private Boolean hayImagen;
+    private List<ImagenesDTO> imagenesDTO;
+    private byte[] imagen;
+    private List<byte[]> imagenes;
 
 }

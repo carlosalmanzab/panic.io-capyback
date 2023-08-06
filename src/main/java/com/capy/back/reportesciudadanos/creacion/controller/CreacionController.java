@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("reportesCiudadanos/creacion")
 public class CreacionController {
@@ -18,7 +20,7 @@ public class CreacionController {
     IReporteCiudadanoService reporteCiudadanoService;
 
     @PostMapping(path = "guardarReporteCiudadano")
-    public ResultDTO guardarReporteCiudadano(@RequestBody ReporteCiudadanoDTO reporteCiudadanoDTO) {
+    public ResultDTO guardarReporteCiudadano(@RequestBody ReporteCiudadanoDTO reporteCiudadanoDTO) throws IOException {
         return reporteCiudadanoService.guardarReporteCiudadano(reporteCiudadanoDTO);
 
     }

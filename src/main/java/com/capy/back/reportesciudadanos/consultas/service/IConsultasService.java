@@ -12,6 +12,7 @@ public interface IConsultasService {
     ReporteCiudadanoOutDTO obtenerReportesCiudadanosPorTipoReporte(Long id);
     ReporteCiudadanoOutDTO obtenerReportesCiudadanosPorLocalidad(String localidad);
     ReporteCiudadanoOutDTO obtenerReportesCiudadanosPorFechaCreacion(LocalDate fechaInicio, LocalDate fechaFin);
+    ReporteCiudadanoOutDTO obtenerDetallesReporteCiudadano(Long idReporte);
 
     /**
     Long cantidadReportesCiudadanos();
