@@ -36,6 +36,8 @@ public class Usuario {
     private String ciudad;
     @Column(name = "CPPAIS")
     private String pais;
+    @Column(name = "CPBARRIO")
+    private String bario;
     @Column(name = "CPDOCUMENTOIDENTIDAD")
     private String documentoIdentidad;
 }
