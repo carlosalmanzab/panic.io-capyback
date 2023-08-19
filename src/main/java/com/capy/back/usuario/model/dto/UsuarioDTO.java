@@ -19,5 +19,6 @@ public class UsuarioDTO {
     private String direccion;
     private String ciudad;
     private String pais;
+    private String barrio;
     private String documentoIdentidad;
 }
