@@ -14,6 +14,7 @@ public class ReporteCiudadanoDTO {
 
     private Long idReporteCiudadano;
     private Long idParametrizacion;
+    private String descripcion;
     private Long idUsuario;
     private LocalDate fechaCreacion;
     private String localidad;

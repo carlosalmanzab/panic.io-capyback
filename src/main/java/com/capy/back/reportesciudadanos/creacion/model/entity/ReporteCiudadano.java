@@ -21,6 +21,9 @@ public class ReporteCiudadano {
     @Column(name = "CPIDPARAMETRIZACIONREPORTE")
     private Long idParametrizacionReporte;
 
+    @Column(name = "CPDESCRIPCION")
+    private String descripcion;
+
     @Column(name = "CPIDUSUARIO")
     private Long idUsuario;
 
