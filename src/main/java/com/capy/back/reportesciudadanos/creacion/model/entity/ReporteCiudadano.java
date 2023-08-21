@@ -3,6 +3,7 @@ package com.capy.back.reportesciudadanos.creacion.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -34,9 +35,9 @@ public class ReporteCiudadano {
     private String localidad;
 
     @Column(name = "CPLATITUD")
-    private Long latitud;
+    private BigDecimal latitud;
 
     @Column(name = "CPLONGITUD")
-    private Long longitud;
+    private BigDecimal longitud;
 
 }
