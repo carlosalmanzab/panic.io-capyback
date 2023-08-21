@@ -63,24 +63,7 @@ public class ReporteCiudadanoService implements IReporteCiudadanoService {
 
         reporteCiudadanoDTO.setFechaCreacion(LocalDate.now());
         ReporteCiudadano reporteCiudadano = reporteCiudadanoMapperService.toEntity(reporteCiudadanoDTO);
-        ReporteCiudadano reporteGuardado = reporteCiudadanoRepository.save(reporteCiudadano);
-        ReporteCiudadanoDTO reporteCiudadanoDTOResult = reporteCiudadanoMapperService.toDTO(reporteGuardado);
-
-        if (reporteCiudadanoDTO.getHayImagen() != null && reporteCiudadanoDTO.getHayImagen().booleanValue() == Boolean.TRUE) {
-            if (reporteCiudadanoDTO.getImagen()!=null) {
-                ImagenesDTO imagenesDTO = new ImagenesDTO();
-                imagenesDTO.setImagen(reporteCiudadanoDTO.getImagen());
-                imagenesDTO.setIdReporteCiudadano(reporteCiudadanoDTOResult.getIdReporteCiudadano());
-                imagenesRepository.save(imagenesMapperService.toEntity(imagenesDTO));
-            } else {
-                for(byte[] imagen : reporteCiudadanoDTO.getImagenes()){
-                    ImagenesDTO imagenesDTO = new ImagenesDTO();
-                    imagenesDTO.setImagen(imagen);
-                    imagenesDTO.setIdReporteCiudadano(reporteCiudadanoDTOResult.getIdReporteCiudadano());
-                    imagenesRepository.save(imagenesMapperService.toEntity(imagenesDTO));
-                }
-            }
-        }
+        reporteCiudadanoRepository.save(reporteCiudadano);
 
         resultDTO.setExito(Boolean.TRUE);
         resultDTO.setMensaje("Reporte ciudadano guardado exitosamente");

@@ -15,15 +15,31 @@ import java.util.stream.Collectors;
 @Service
 public class BarrioService implements IBarrioService {
     @Autowired
-    private IBarrioRepository barrioRepository;
+    IBarrioRepository barrioRepository;
 
     @Autowired
-    private BarrioMapperService barrioMapperService;
+    BarrioMapperService barrioMapperService;
 
     @Override
     public BarrioOutDTO listarBarrios() {
         BarrioOutDTO barrioOutDTO = new BarrioOutDTO();
         List<Barrio> barrioList = barrioRepository.findAll();
+
+        if (barrioList.isEmpty()) {
+            barrioOutDTO.setMensajeError("No se encontraron barrios");
+            return barrioOutDTO;
+        }
+        List<BarrioDTO> barrioDTOList = barrioList.stream().map(barrioMapperService::toDTO).collect(Collectors.toList());
+        barrioOutDTO.setBarrioDTOList(barrioDTOList);
+        barrioOutDTO.setTotalBarrios((long) barrioDTOList.size());
+        return barrioOutDTO;
+
+    }
+
+    @Override
+    public BarrioOutDTO listarBarriosPorComuna(Long idComuna) {
+        BarrioOutDTO barrioOutDTO = new BarrioOutDTO();
+        List<Barrio> barrioList = barrioRepository.findAllByIdComuna(idComuna);
 
         if (barrioList.isEmpty()) {
             barrioOutDTO.setMensajeError("No se encontraron barrios");

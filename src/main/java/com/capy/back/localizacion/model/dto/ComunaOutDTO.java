@@ -12,12 +12,10 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class BarrioOutDTO extends ResultDTO {
-
-    private List<BarrioDTO> barrioDTOList;
-    private BarrioDTO barrioDTO;
-    private Long totalBarrios;
+public class ComunaOutDTO extends ResultDTO {
+    private List<ComunaDTO> comunaDTOList;
+    private ComunaDTO comunaDTO;
+    private Long totalComunas;
     private String mensajeError;
     private String mensajeOK;
-
 }

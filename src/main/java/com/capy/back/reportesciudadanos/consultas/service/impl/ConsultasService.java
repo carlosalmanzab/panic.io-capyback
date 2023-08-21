@@ -1,10 +1,8 @@
 package com.capy.back.reportesciudadanos.consultas.service.impl;
 
 import com.capy.back.reportesciudadanos.consultas.service.IConsultasService;
-import com.capy.back.reportesciudadanos.creacion.model.dto.ImagenesDTO;
 import com.capy.back.reportesciudadanos.creacion.model.dto.ReporteCiudadanoDTO;
 import com.capy.back.reportesciudadanos.creacion.model.dto.ReporteCiudadanoOutDTO;
-import com.capy.back.reportesciudadanos.creacion.model.entity.Imagenes;
 import com.capy.back.reportesciudadanos.creacion.model.entity.ReporteCiudadano;
 import com.capy.back.reportesciudadanos.creacion.model.mapper.ImagenesMapperService;
 import com.capy.back.reportesciudadanos.creacion.model.mapper.ReporteCiudadanoMapperService;
@@ -71,13 +69,6 @@ public class ConsultasService implements IConsultasService {
 
         reporteCiudadanoOutDTO.setExito(Boolean.TRUE);
         reporteCiudadanoOutDTO.setMensaje(SE_ENCONTRARON_REPORTES + reporteCiudadanoDTOList.size() + REPORTES_CIUDADANOS);
-
-        for (ReporteCiudadanoDTO reporteCiudadanoDTO : reporteCiudadanoDTOList) {
-            Optional<Imagenes> imagenesDTOList = imagenesRepository.findAllByIdReporteCiudadano(reporteCiudadanoDTO.getIdReporteCiudadano());
-            if (imagenesDTOList.isPresent()) {
-                reporteCiudadanoDTO.setImagenesDTO(imagenesDTOList.stream().map(imagenesMapperService::toDTO).collect(Collectors.toList()));
-            }
-        }
         reporteCiudadanoOutDTO.setReporteCiudadanoDTOList(reporteCiudadanoDTOList);
 
         return reporteCiudadanoOutDTO;
@@ -186,13 +177,6 @@ public class ConsultasService implements IConsultasService {
         }
 
         ReporteCiudadanoDTO reporteCiudadanoDTO = reporteCiudadanoMapperService.toDTO(reporteCiudadano.get());
-
-        Optional<Imagenes> imagenesList = imagenesRepository.findAllByIdReporteCiudadano(reporteCiudadanoDTO.getIdReporteCiudadano());
-
-        if (imagenesList.isPresent()) {
-            List<ImagenesDTO> imagenesDTO = imagenesList.stream().map(imagenesMapperService::toDTO).collect(Collectors.toList());
-            reporteCiudadanoDTO.setImagenesDTO(imagenesDTO);
-        }
 
         reporteCiudadanoOutDTO.setExito(Boolean.TRUE);
         reporteCiudadanoOutDTO.setReporteCiudadano(reporteCiudadanoDTO);

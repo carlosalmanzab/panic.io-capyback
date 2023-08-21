@@ -3,23 +3,22 @@ package com.capy.back.localizacion.model.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "CP_BARRIO")
+@Table(name = "CP_COMUNA")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Barrio {
+public class Comuna {
     @Id
-    @Column(name = "CPIDBARRIO")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CP_BARRIO_SEQ")
+    @Column(name = "CPIDCOMUNA")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "CP_COMUNA_SEQ")
     private Long id;
+
     @Column(name = "CPNOMBRE")
     private String nombre;
 
-    @Column(name = "CPIDCOMUNA")
-    private Long idComuna;
 }
-
