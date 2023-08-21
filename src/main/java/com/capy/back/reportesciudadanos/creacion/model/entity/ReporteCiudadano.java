@@ -1,6 +1,7 @@
 package com.capy.back.reportesciudadanos.creacion.model.entity;
 
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -21,6 +22,14 @@ public class ReporteCiudadano {
 
     @Column(name = "CPIDPARAMETRIZACIONREPORTE")
     private Long idParametrizacionReporte;
+
+    @Lob
+    @Type(type = "org.hibernate.type.BinaryType")
+    @Column(name = "CPIMAGEN", columnDefinition = "LONGBLOB")
+    private byte[] imagen;
+
+    @Column(name = "CPHAYIMAGEN")
+    private Boolean hayImagen;
 
     @Column(name = "CPDESCRIPCION")
     private String descripcion;
