@@ -2,6 +2,7 @@ package com.capy.back.reportesciudadanos.creacion.model.dto;
 
 import lombok.*;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -18,8 +19,8 @@ public class ReporteCiudadanoDTO {
     private Long idUsuario;
     private LocalDate fechaCreacion;
     private String localidad;
-    private Long latitud;
-    private Long longitud;
+    private BigDecimal latitud;
+    private BigDecimal longitud;
     private ImagenesDTO imagenDTO;
     private Boolean hayImagen;
     private List<ImagenesDTO> imagenesDTO;
