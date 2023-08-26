@@ -37,7 +37,7 @@ public class Usuario {
     @Column(name = "CPPAIS")
     private String pais;
     @Column(name = "CPBARRIO")
-    private String bario;
+    private String barrio;
     @Column(name = "CPDOCUMENTOIDENTIDAD")
     private String documentoIdentidad;
 }
