@@ -24,9 +24,8 @@ public class ReporteCiudadano {
     private Long idParametrizacionReporte;
 
     @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
-    @Column(name = "CPIMAGEN", columnDefinition = "LONGBLOB")
-    private byte[] imagen;
+    @Column(name = "CPIMAGEN", columnDefinition = "LONGTEXT")
+    private String imagen;
 
     @Column(name = "CPHAYIMAGEN")
     private Boolean hayImagen;
@@ -43,10 +42,10 @@ public class ReporteCiudadano {
     @Column(name = "CPLOCALIDAD")
     private String localidad;
 
-    @Column(name = "CPLATITUD")
+    @Column(name = "CPLATITUD", precision = 10, scale = 6)
     private BigDecimal latitud;
 
-    @Column(name = "CPLONGITUD")
+    @Column(name = "CPLONGITUD", precision = 10, scale = 6)
     private BigDecimal longitud;
 
 }

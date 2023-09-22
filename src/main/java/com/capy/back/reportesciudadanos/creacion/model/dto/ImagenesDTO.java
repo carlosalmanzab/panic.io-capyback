@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 public class ImagenesDTO {
     private Long idImagen;
-    private byte[] imagen;
+    private String imagen;
     private Long idReporteCiudadano;
 
 }

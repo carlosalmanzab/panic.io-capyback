@@ -22,6 +22,6 @@ public class ReporteCiudadanoDTO {
     private BigDecimal latitud;
     private BigDecimal longitud;
     private Boolean hayImagen;
-    private byte[] imagen;
+    private String imagen;
 
 }

@@ -20,9 +20,8 @@ public class Imagenes {
     private Long idImagen;
 
     @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
-    @Column(name = "CPIMAGEN", columnDefinition = "LONGBLOB")
-    private byte[] imagen;
+    @Column(name = "CPIMAGEN", columnDefinition = "LONGTEXT")
+    private String imagen;
 
     @Column(name = "CPIDREPORTECIUDADANO")
     private Long idReporteCiudadano;
