@@ -35,22 +35,29 @@ public class DataInicial implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
-        //eliminarTablas(List.of("CP_BARRIO", "CP_COMUNA", "CP_PARAMETRIZACION"));
-
-        llenarComunas();
-        llenarBarriosComuna1();
-        llenarBarriosComuna2();
-        llenarBarriosComuna3();
-        llenarBarriosComuna4();
-        llenarBarriosComuna5();
-        llenarBarriosComuna6();
-        llenarBarriosComuna7();
-        llenarBarriosComuna8();
-        llenarBarriosComuna9();
-
-        llenarParametrizacion();
+        llenarDatos();
     }
 
+    private Boolean verificarDatos()    {
+        return comunaRepository.findAll().isEmpty() && barrioRepository.findAll().isEmpty() && parametrizacionRepository.findAll().isEmpty();
+    }
+
+    private void llenarDatos() {
+        if (verificarDatos()) {
+            llenarComunas();
+            llenarBarriosComuna1();
+            llenarBarriosComuna2();
+            llenarBarriosComuna3();
+            llenarBarriosComuna4();
+            llenarBarriosComuna5();
+            llenarBarriosComuna6();
+            llenarBarriosComuna7();
+            llenarBarriosComuna8();
+            llenarBarriosComuna9();
+
+            llenarParametrizacion();
+        }
+    }
     private void eliminarTablas(List<String> cpBarrio) {
         cpBarrio.forEach(tabla -> entityManager.createNativeQuery("DROP TABLE IF EXISTS " + tabla).executeUpdate());
     }
